@@ -1,3 +1,6 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable eol-last */
+/* eslint-disable linebreak-style */
 /**
  * app.js
  *
@@ -52,3 +55,11 @@ try {
 
 // Start server
 sails.lift(rc('sails'));
+
+
+// database
+
+// eslint-disable-next-line no-unused-vars, eol-last
+const db = require('./config/models/db');
+// eslint-disable-next-line no-unused-vars
+const Customer = require('./config/models/customer');

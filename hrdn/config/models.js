@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /**
  * Default model settings
  * (sails.config.models)

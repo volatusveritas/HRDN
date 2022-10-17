@@ -14,22 +14,17 @@
 
 module.exports = {
 
-    'new': function(req, res) {
-        res.view('customer/new');
-        res.redirect('/');
-    },
-
     list:function(req, res) {
         Customers.find({}).exec(function(err, customers){
             if(err){
                 res.send(500, {error: 'Não deu dale'});
             }
-            res.view('customer/list', {customers:customers});
+            res.view('list', {customers:customers});
         });
     },
 
     add:function(req, res){
-        res.view('customer/add');
+        res.view('add');
     },
 
     create:function(req, res) {
@@ -63,7 +58,7 @@ module.exports = {
                 res.send(500, {error: 'Nada dale'});
             }
 
-            res.view('customer/edit', {customer:customer});
+            res.view('edit', {customer:customer});
         });
     },
     update: function(req, res){

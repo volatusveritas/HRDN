@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable no-trailing-spaces */
 /**
  * Customers.js
@@ -9,11 +10,10 @@
 module.exports = {
   
   attributes: {
-
-    id: { type: 'number', autoIncrement: true, },
+    
     name: {type: 'string', required: true},
     job: {type: 'string', required: true},
-    hiring: {type: 'string', columnType: 'date', required: true, }
+    hiring: {type: 'ref', columnType: 'date', required: true, }
 
   },
 

@@ -1,4 +1,3 @@
-/* eslint-disable no-trailing-spaces */
 /**
  * CustomersController
  *
@@ -7,7 +6,6 @@
  */
 
 module.exports = {
-  
 
 };
 

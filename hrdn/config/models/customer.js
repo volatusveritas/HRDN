@@ -21,9 +21,12 @@ const Customer = db.define('customer', {
         allowNull: false,
     },
     hiring: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false,
     }
+},
+{
+    timestamps: false,
 });
 
 //criar tabel fml

@@ -11,5 +11,4 @@
 
 module.exports.routes = {
   '/': { view: 'pages/home' },
-  'POST /register': { action: 'register/create' }
 };

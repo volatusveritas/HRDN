@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /**
  * View Engine Configuration
  * (sails.config.views)

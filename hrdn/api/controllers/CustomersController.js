@@ -1,8 +1,4 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable no-trailing-spaces */
-/* eslint-disable quotes */
-/* eslint-disable semi */
-/* eslint-disable indent */
 /**
  * CustomersController
  *
@@ -11,7 +7,7 @@
  */
 
 module.exports = {
-    'new': function(req, res) {
-        res.view();
-    }
-}
+  
+
+};
+

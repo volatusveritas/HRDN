@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /**
  * Blueprint API Configuration
  * (sails.config.blueprints)

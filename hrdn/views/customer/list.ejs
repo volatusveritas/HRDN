@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de clientes</title>
+</head>
+<body>
+    <h4>Ainda sem informações nesta pagina</h4>
+    <table class="table table-striped">
+        <thread>
+            <tr>
+                <th>#</th>
+                <th>NAME</th>
+                <th>JOB</th>
+                <th>HIRING</th>
+            </tr>
+        </thread>
+        <tbody>
+            <% customers.forEach(function(customer){ %>
+                <tr>
+                    <td><%= customer.id %></td>
+                    <td><%= customer.name %></td>
+                    <td><%= customer.job %></td>
+                    <td><%= customer.hiring %></td>
+                    <td>
+                        <a href="/customers/edit/<%= customer.id %>" class="btn btn-primary">Edit</a>
+                        <form class="d-inline" action="/customers/delete/<%= customer.id %>" method="post">
+                            <input type="submit" value="Delete" class="btn btn-danger">
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <br><br>
+    <a href="/">Voltar</a>
+</body>
+</html>

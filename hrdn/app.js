@@ -64,10 +64,7 @@ const db = require('./config/models/db');
 // eslint-disable-next-line no-unused-vars
 const Customer = require('./config/models/customer');
 
-
 // express
-
-//express
 
 const express = require('express');
 const app = express();

@@ -60,36 +60,3 @@ sails.lift(rc('sails'));
 // database
 
 // eslint-disable-next-line no-unused-vars, eol-last
-const db = require('./config/models/db');
-// eslint-disable-next-line no-unused-vars
-const Customer = require('./config/models/customer');
-
-// express
-
-const express = require('express');
-const app = express();
-
-app.use(express.json());
-
-app.get('/', async (req, res) => {
-  res.send('My home bro');
-});
-
-app.post('/register', async (req, res) => {
-  await Customer.create(req.body)
-  .then(() => {
-    return res.json({
-      erro: false,
-      mensagem: 'Sucesso ao cadastrar cliente'
-    });
-  }).catch(() => {
-    return res.status(400).json({
-      erro: false,
-      mensagem: 'Erro ao cadastrar cliente'
-    });
-  });
-});
-
-app.listen(8080, () => {
-  console.log('Iniciado em http://localhost:8080');
-});

@@ -1,3 +1,5 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable indent */
 /**
  * CustomersController
  *
@@ -6,6 +8,19 @@
  */
 
 module.exports = {
+    'customers': function(req, res) {
+        res.view('customer/customers');
+        res.redirect('/');
+    },
 
+    'new': function(req, res) {
+        res.view('customer/new');
+        res.redirect('/');
+    },
+
+    'delete': function(req, res){
+        res.view('customer/delete');
+        res.redirect('/');
+    }
 };
 

@@ -19,12 +19,12 @@ module.exports = {
             if(err){
                 res.send(500, {error: 'Não deu dale'});
             }
-            res.view('list', {customers:customers});
+            res.view('customer/list', {customers:customers});
         });
     },
 
     add:function(req, res){
-        res.view('add');
+        res.view('customer/add');
     },
 
     create:function(req, res) {
@@ -58,7 +58,7 @@ module.exports = {
                 res.send(500, {error: 'Nada dale'});
             }
 
-            res.view('edit', {customer:customer});
+            res.view('customer/edit', {customer:customer});
         });
     },
     update: function(req, res){

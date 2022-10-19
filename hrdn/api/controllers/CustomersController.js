@@ -42,7 +42,7 @@ module.exports = {
     },
 
     delete: function(req, res){
-        Customers.destroy({id:req.params.id}).exec(function(err){
+        Customers.destroy({id:req.body.id}).exec(function(err){
             if(err){
                 res.send(500, {error: 'Nada dale'});
             }
@@ -52,6 +52,7 @@ module.exports = {
 
         return false;
     },
+
     edit: function(req, res){
         Customers.findOne({id:req.params.id}).exec(function(err, customer){
             if(err){

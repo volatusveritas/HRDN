@@ -25,9 +25,10 @@
                     <td><%= customer.job %></td>
                     <td><%= customer.hiring %></td>
                     <td>
-                        <a href="/customers/edit/<%= customer.id %>">Editar</a>
+                        <button><a href="/customers/edit/<%= customer.id %>" style="text-decoration:none;color:black;">Editar</a></button>
+                        
                         <form action="/customers/delete" method="POST">
-                            <input type="hidden" value="<%= customer.id %>" readonly></input>
+                            <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
                             <button type="submit">Deletar</button>
                         </form>
                     </td>

@@ -14,8 +14,8 @@
 
 module.exports = {
 
-    list:function(req, res) {
-        Customers.find({}).exec(function(err, customers){
+    list: async function(req, res) {
+        await Customers.find({}).exec(function(err, customers){
             if(err){
                 res.send(500, {error: 'Não deu dale'});
             }
@@ -27,12 +27,9 @@ module.exports = {
         res.view('customer/add');
     },
 
-    create:function(req, res) {
-        var name = req.body.name;
-        var job = req.body.job;
-        var hiring = req.body.hiring;
+    create: async function(req, res) {
 
-        Customers.create({name:name, job:job, hiring:hiring}).exec(function(err){
+        await Customers.create({name: req.body.name, job: req.body.job, hiring: req.body.hiring}).exec(function(err){
             if(err){
                 res.send(500, {error: 'Nada dale'});
             }
@@ -41,8 +38,8 @@ module.exports = {
         });
     },
 
-    delete: function(req, res){
-        Customers.destroy({id:req.body.id}).exec(function(err){
+    delete: async function(req, res){
+        await Customers.destroy({id:req.body.id}).exec(function(err){
             if(err){
                 res.send(500, {error: 'Nada dale'});
             }
@@ -53,8 +50,8 @@ module.exports = {
         return false;
     },
 
-    edit: function(req, res){
-        Customers.findOne({id:req.params.id}).exec(function(err, customer){
+    edit: async function(req, res){
+        await Customers.findOne({id:req.body.id}).exec(function(err, customer){
             if(err){
                 res.send(500, {error: 'Nada dale'});
             }
@@ -62,12 +59,11 @@ module.exports = {
             res.view('customer/edit', {customer:customer});
         });
     },
-    update: function(req, res){
-        var name = req.body.name;
-        var job = req.body.job;
-        var hiring = req.body.hiring;
+    update: async function(req, res){
 
-        Customers.update({id: req.params.id},{name:name, job:job, hiring:hiring}).exec(function(err){
+        data = new Date(req.body.hiring);
+
+        await Customers.update({id:req.body.id}).set({name: req.body.name, job: req.body.job, hiring: data}).exec(function(err){
             if(err){
                 res.send(500, {error: 'Nada dale'});
             }

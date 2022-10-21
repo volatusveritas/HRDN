@@ -13,7 +13,7 @@ module.exports = {
     
     name: {type: 'string', required: true},
     job: {type: 'string', required: true},
-    hiring: {type: 'ref', columnType: 'date', required: true, }
+    hiring: {type: 'ref', columnType: 'datetime', required: true}
 
   },
 

@@ -7,10 +7,12 @@
     <title>Editar cliente</title>
 </head>
 <body>
-    <form action="/customers/update/<%= customer.id %>">
-        <input type="text" name="name" class="form-control" value="<%= customer.name %>">
-        <input type="text" name="job" class="form-control" value="<%= customer.job %>">
-        <input type="text" name="hiring" class="form-control" value="<%= customer.hiring %>">
+    <!--<h4>Informacao indisponivel no momento</h4>-->
+    <form action="/customers/update/" method="POST">
+        <input type="text" name="id" value="<%= customer.id %>" readonly>
+        <input type="text" name="name" value="<%= customer.name %>">
+        <input type="text" name="job" value="<%= customer.job %>">
+        <input type="text" name="hiring" value="<%= customer.hiring %>">
         <input type="submit" value="Editar cliente">
     </form>
     <a href="/">Voltar</a>

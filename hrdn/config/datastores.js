@@ -17,8 +17,8 @@
 module.exports.datastores = {
 
   default: {
-    adapter: 'sails-mongo',
-    url: 'mongodb://root@localhost:3306/hrdn',
+    adapter: require('sails-mysql'),
+    url: 'mysql://root:java@123@localhost:3306/hrdn',
   }
 
 

@@ -8,7 +8,6 @@
  */
 
 module.exports = {
-  tableName: 'customers',
   attributes: {
 
     name: {type: 'string', required: true},

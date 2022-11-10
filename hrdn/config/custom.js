@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /**
  * Custom configuration
  * (sails.config.custom)

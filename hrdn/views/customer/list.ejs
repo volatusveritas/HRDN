@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar clientes</title>
+</head>
+<body>
+    <table>
+        <thread>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>JOB</th>
+                <th>HIRING</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thread>
+        <tbody>
+            <% customers.forEach(function(customer){ %>
+                <tr>
+                    <td><%= customer.id %></td>
+                    <td><%= customer.name %></td>
+                    <td><%= customer.job %></td>
+                    <td><%= customer.hiring %></td>
+                    <td>
+                        <form action="/customers/edit" method="POST">
+                            <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
+                            <button type="submit">Editar</button>
+                        </form>
+                        
+                        <form action="/customers/delete" method="POST">
+                            <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
+                            <button type="submit">Deletar</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <br><br>
+    <a href="/">Voltar</a>
+</body>
+</html>

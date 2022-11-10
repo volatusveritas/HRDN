@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /**
  * Security Settings
  * (sails.config.security)

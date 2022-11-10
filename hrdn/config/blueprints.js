@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /**
  * Blueprint API Configuration
  * (sails.config.blueprints)
@@ -17,7 +18,7 @@ module.exports.blueprints = {
   *                                                                          *
   ***************************************************************************/
 
-  // actions: false,
+  actions: true,
 
 
   /***************************************************************************

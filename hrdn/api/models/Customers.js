@@ -8,9 +8,9 @@
  */
 
 module.exports = {
-  
+  tableName: 'customers',
   attributes: {
-    
+
     name: {type: 'string', required: true},
     job: {type: 'string', required: true},
     hiring: {type: 'ref', columnType: 'datetime', required: true}

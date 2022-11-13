@@ -6,17 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
         integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link rel="stylesheet"
-        href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
-    <link rel="stylesheet" href="/assets/styles/estilo.css">
+   
+
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 
 <body>
     <!--Barra lateral-->
     <div class="navbar">
-        <input type="checkbox" id="click" class="checkbox" hidden >
+        <input type="checkbox" id="click" class="checkbox" hidden>
         <div class="barra-lateral">
             <label for="click">
                 <div class="menu">
@@ -25,20 +26,20 @@
                     <div class="linha linha-3"></div>
                 </div>
             </label>
-            <div class="ano">2020</div>
+            <div class="ano">2022</div>
         </div>
         <nav class="navegacao">
             <div class="navegacao-cabeca">
-                <h1 class="navegacao-titulo">RHDR</h1>
+                <h1 class="navegacao-titulo">RHDN</h1>
                 <ul class="navegacao-lista">
                     <li class="navegacao-item">
                         <a href="/" class="navegacao-link">Home</a>
                     </li>
                     <li class="navegacao-item">
-                        <a href="/customers/add" class="navegacao-link">Cadastro</a>
+                        <a href="customers/add" class="navegacao-link">Cadastro</a>
                     </li>
                     <li class="navegacao-item">
-                        <a href="/customers/list" class="navegacao-link">Consulta</a>
+                        <a href="customers/list" class="navegacao-link">Consulta</a>
                     </li>
                 </ul>
             </div>
@@ -55,10 +56,65 @@
             </h1>
             <p class="boas-vindas-paragrafo">O Seu portal de RH</p>
         </div>
+        <div class="boas-vindas-btn">
+            <button type="button" class="header-btn"><a href="#corpo" class="btn-sobrenos"><i
+                        class="fas fa-angle-double-down"></i></a></button>
+        </div>
     </header>
     <!--final das Boas vindas-->
-    <section class="corpo">
+    <section class="corpo" id="corpo">
+        <div class="corpo-conteudo">
+            <div class="quem-somos">
+                <h2 class="sub-titulo">RHDN</h2>
+                <p>Human Resources Dynamic Notes é um site desenvolvido para consultas rápidas e dinâmicas no setor de
+                    Recursos Humanos possibilitando o recrutamento de funcionários, a admissão
+                    dos funcionários, processamento do pagamento, atualização e análise de dados para sua empresa. </p>
+            </div>
+            <div class="funcao">
+                <h2 class="sub-titulo">Qual a função dos Recursos Humanos?</h2>
+                <p>A área de Recursos Humanos é essencialmente de serviços.
+                    Suas funções variam de acordo com o tipo de organização a que pertencem, sempre visando a integração
+                    eficaz de
+                    todos os departamentos em busca dos melhores resultados. Algumas funções podem ser mais destacadas
+                    como:
+                    ·Descrever as responsabilidades que definem cada cargo e as qualidades que a pessoa que o ocupa deve
+                    ter;
+                    ·Recrutar o pessoal certo para cada posição; proporcionar ajuda psicológica aos seus funcionários, a
+                    fim de manter a harmonia entre eles — além de encontrar uma solução para os problemas que surgem no
+                    dia a dia;
+                    ·Cuidar da segurança, saúde e qualidade de vida dos trabalhadores;</p>
 
+            </div>
+            <div class="contato">
+
+                <h2 class="sub-titulo">Quando entrar em contato com o RH?</h2>
+
+                <p> 
+                    <i class="fa fa-exclamation"></i> Quando você (ou um colega de trabalho) sofre um assédio ou discriminação de colegas, incluindo do gerente </p>
+                <p>
+                    <i class="fa fa-exclamation"></i> Quando você tem dúvidas sobre os benefícios,
+                    incluindo o seguro de saúde fornecido pela empresa, ou seus direitos garantidos por lei
+                </p>
+                <p>
+
+                    <i class="fa fa-exclamation"></i> Quando suas circunstâncias pessoais mudam (p. ex.,
+                    você tem um(a) filho(a), precisa reduzir sua carga horária, precisa de instalações especiais para
+                    atender uma deficiência)
+                </p>
+                <p>
+                    <i class="fa fa-exclamation"></i> Quando você tem alguma dúvida sobre como avançar na
+                    empresa, incluindo oportunidades em outras áreas ou participações em treinamentos adicionais
+
+                </p>
+                <p>
+
+                    <i class="fa fa-exclamation"></i> Quando você precisa de um terceiro imparcial para
+                    solucionar um problema relacionado ao trabalho
+
+                </p>
+                
+            </div>
+        </div>
     </section>
 
 </body>

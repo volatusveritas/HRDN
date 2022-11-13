@@ -1,6 +1,7 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -44,7 +45,9 @@ body{
     color: #d5d5d5;
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    
 }
+
 .navegacao{
     position: fixed;
     left: -32rem;
@@ -80,6 +83,35 @@ body{
     font-weight: 400;
     letter-spacing: .1rem;
     text-transform: uppercase;
+    transition: all .2s;
+}
+.navegacao-link:hover{
+    color: #d5d5d5;
+    font-size: 1.7rem;
+}
+.navegacao-link::before{
+    content: "";
+    width: 0rem;
+    height:  .1rem;
+    background-color:#d5d5d5;
+    position: absolute;
+    top: 1rem;
+    left: -4rem;
+    transition: width .5s cubic-bezier(1, 0 , 0 ,1);
+}
+.navegacao-link::after{
+    content: "";
+    width: 0rem;
+    height:  .1rem;
+    background-color: #d5d5d5;
+    position: absolute;
+    top: 1rem;
+    right: -4rem;
+    transition: width .5s cubic-bezier(1, 0 , 0 ,1);
+}
+.navegacao-link:hover::before,
+.navegacao-link:hover::after{
+    width: 3rem;
 }
 .checkbox:checked~ .navegacao{
     left: 8rem;
@@ -104,7 +136,10 @@ body{
     margin-left: 8rem;
     display: flex;
     height: 100vh;
-    justify-content: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+
     
 }
 
@@ -120,6 +155,30 @@ body{
     text-align: center;
     animation: boasvindas 1.5s .5s backwards;
 }
+.header-btn{
+   
+   padding: .7rem .5rem;
+   font-size: 2rem;
+   background-color: transparent;
+   outline: none;
+   border: none;
+   animation: boasvindas 2s .7s backwards;
+   transition: all .2s;
+   
+}
+.btn-sobrenos{
+    text-decoration: none;
+    color: #090909;
+}
+.btn-sobrenos:hover{
+    color: #d5d5d5;
+}
+.header-btn:hover{
+    color: #d5d5d5;
+    font-size: 2.5rem;
+}
+
+
 
 @keyframes boasvindas{
     0%{
@@ -129,4 +188,35 @@ body{
         opacity: 1;
     }
 }
-/*vindas Boas vindas*/
+/*final vindas Boas vindas*/
+/*corpo*/
+.corpo{
+    margin-left: 8rem;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    
+}
+.corpo-conteudo{
+
+    padding-left: 5rem;
+    padding-right: 3rem;
+}
+.corpo-conteudo p{
+    text-align: left;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.sub-titulo{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.6rem;
+
+}
+.contato i{
+    font-size: 1.5rem;
+    color: #090909;
+
+}
+
+/*final corpo*/

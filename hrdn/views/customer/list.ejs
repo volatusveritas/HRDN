@@ -4,42 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/list.css">
     <title>Listar clientes</title>
 </head>
 <body>
-    <table>
-        <thread>
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>JOB</th>
-                <th>HIRING</th>
-                <th>ACTIONS</th>
-            </tr>
-        </thread>
-        <tbody>
-            <% customers.forEach(function(customer){ %>
-                <tr>
-                    <td><%= customer.id %></td>
-                    <td><%= customer.name %></td>
-                    <td><%= customer.job %></td>
-                    <td><%= customer.hiring %></td>
-                    <td>
-                        <form action="/customers/edit" method="POST">
-                            <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
-                            <button type="submit">Editar</button>
-                        </form>
-                        
-                        <form action="/customers/delete" method="POST">
-                            <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
-                            <button type="submit">Deletar</button>
-                        </form>
-                    </td>
-                </tr>
-            <% }) %>
-        </tbody>
+  <div class="container">
+    <h4>Customers</h4><br><br>
+    <div class="input-content">
+      <input type="search" id="search">
+    </div>
+    <table class="table">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>NAME</th>
+              <th>JOB</th>
+              <th>HIRING</th>
+              <th>ACTIONS</th>
+          </tr>
+      </thead>
+      <tbody>
+          <% customers.forEach(function(customer){ %>
+              <tr>
+                  <td><%= customer.id %></td>
+                  <td><%= customer.name %></td>
+                  <td><%= customer.job %></td>
+                  <td><%= customer.hiring %></td>
+                  <td>
+                      <form action="/customers/edit" method="POST">
+                          <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
+                          <button type="submit">Editar</button>
+                      </form>
+
+                      <form action="/customers/delete" method="POST">
+                          <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
+                          <button type="submit">Deletar</button>
+                      </form>
+                  </td>
+              </tr>
+          <% }) %>
+      </tbody>
     </table>
+    <div class="register">
+      <div class="up">
+        <a href="">x</a>
+      </div>
+      <div class="down">
+        <form action="" method="POST">
+          <input type="text" name="nome"><br><br>
+          <input type="text" name="job"><br><br>
+          <input type="text" name="date"><br><br>
+          <input type="submit">
+        </form>
+      </div>
+    </div>
     <br><br>
     <a href="/">Voltar</a>
+  </div>
 </body>
 </html>

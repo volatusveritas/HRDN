@@ -4,16 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/list.css">
     <title>Cadastrar cliente</title>
 </head>
 <body>
-    <form action="/customers" method="POST">
-        <input type="text" name="name" placeholder="nome">
-        <input type="text" name="job" placeholder="qual area">
-        <input type="text" name="hiring" placeholder="data de admissão">
-        <input type="submit" value="cadastrar cliente">
-    </form>
+  <div class="container">
+    <table class="table">
+      <thead>
+          <tr>
+              <th>NAME</th>
+              <th>JOB</th>
+              <th>HIRING</th>
+              <th>ACTIONS</th>
+          </tr>
+      </thead>
+      <tbody>
+        <form action="/customers" method="POST">
+            <tr>
+              <td>
+                <input type="text" name="name" placeholder="Qual o nome do cliente">
+              </td>
+              <td>
+                <input type="text" name="job" placeholder="Qual o trabalho atual">
+              </td>
+              <td>
+                <input type="text" name="hiring" placeholder="AAAA-MM-DD">
+              </td>
+              <td>
+                <input type="submit" value="Cadastrar Cliente">
+              </td>
+            </tr>
+          </form>
+      </tbody>
+    </table>
     <br><br>
     <a href="/">Voltar</a>
+  </div>
 </body>
 </html>

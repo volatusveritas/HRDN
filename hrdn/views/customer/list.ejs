@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="container">
-    <h4>Customers</h4><br><br>
+    <h2>Customers</h2><br><br>
     <div class="input-content">
       <input type="search" id="search">
     </div>
@@ -45,21 +45,22 @@
           <% }) %>
       </tbody>
     </table>
-    <div class="register">
-      <div class="up">
+    <!--<div class="register">
+      <div class="up" id="up">
         <a href="">x</a>
       </div>
-      <div class="down">
-        <form action="" method="POST">
-          <input type="text" name="nome"><br><br>
-          <input type="text" name="job"><br><br>
-          <input type="text" name="date"><br><br>
-          <input type="submit">
+      <div class="down" id="down">
+        <form action="/customers" method="POST">
+          <input type="text" name="name" placeholder="Qual o nome do cliente"><br><br>
+          <input type="text" name="job" placeholder="Qual o trabalho do cliente"><br><br>
+          <input type="text" name="hiring" placeholder="AAAA-MM-DD"><br><br>
+          <input type="submit" value="Cadastrar cliente">
         </form>
       </div>
-    </div>
+    </div>-->
     <br><br>
     <a href="/">Voltar</a>
   </div>
+  <script src="list.js"></script>
 </body>
 </html>

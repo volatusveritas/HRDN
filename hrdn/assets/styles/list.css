@@ -3,31 +3,23 @@ body{
   color:#34495E;
   height: 100vh;
   width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
 }
 
 .container{
+  height: 100%;
   width:100%;
   margin:auto;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h6{
-  margin: auto;
-  width: 100%;
-}
-
-.input-content{
-  width: 100%;
-  margin: auto;
-}
 
 table{
+  width: 80%;
   border-collapse:collapse;
-  width:100%;
 }
 
 .table{
@@ -57,17 +49,23 @@ background:#BDC3C7;
 }
 
 .register{
-  height: 50vh;
+  height: 25vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .up{
   height: 10%;
+  position: relative;
+  top: 0;
+  margin: 20px;
 }
 
 .down{
   height: 90%;
+  margin: auto;
 }
+

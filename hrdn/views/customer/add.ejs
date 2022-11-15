@@ -1,44 +1,133 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/list.css">
-    <title>Cadastrar cliente</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/estilo.css">
+  <title>RHDR</title>
 </head>
+
 <body>
-  <div class="container">
-    <table class="table">
-      <thead>
-          <tr>
-              <th>NAME</th>
-              <th>JOB</th>
-              <th>HIRING</th>
-              <th>ACTIONS</th>
-          </tr>
-      </thead>
-      <tbody>
-        <form action="/customers" method="POST">
-            <tr>
-              <td>
-                <input type="text" name="name" placeholder="Qual o nome do cliente">
-              </td>
-              <td>
-                <input type="text" name="job" placeholder="Qual o trabalho atual">
-              </td>
-              <td>
-                <input type="text" name="hiring" placeholder="AAAA-MM-DD">
-              </td>
-              <td>
-                <input type="submit" value="Cadastrar Cliente">
-              </td>
-            </tr>
-          </form>
-      </tbody>
-    </table>
-    <br><br>
-    <a href="/">Voltar</a>
+  <!--Barra lateral-->
+  <div class="navbar">
+    <input type="checkbox" id="click" class="checkbox" hidden>
+    <div class="barra-lateral">
+      <label for="click">
+        <div class="menu">
+          <div class="linha linha-1"></div>
+          <div class="linha linha-2"></div>
+          <div class="linha linha-3"></div>
+        </div>
+      </label>
+      <div class="ano">2022</div>
+    </div>
+    <nav class="navegacao">
+      <div class="navegacao-cabeca">
+        <h1 class="navegacao-titulo">RHDN</h1>
+        <ul class="navegacao-lista">
+          <li class="navegacao-item">
+            <a href="/" class="navegacao-link">Home</a>
+          </li>
+          <li class="navegacao-item">
+            <a href="/customer/add.html" class="navegacao-link">Cadastro</a>
+          </li>
+          <li class="navegacao-item">
+            <a href="/customer/list.html" class="navegacao-link">Consulta</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
+  <!--final da Barra lateral-->
+  <!--container -->
+  <div class="container">
+    <div class="container-titulo">
+      <h1>Cadastro de Funcionario</h1>
+    </div>
+    <form action="/customers" method="post" class="formulario-cadastro">
+      <div class="dados">
+        <div class="dados-wrap">
+          <div class="dados-pessoais nome">
+            <input type="text" name="nome" id="nome" class="input-info" placeholder="Nome">
+          </div>
+            <div class="dados-pessoais sobrenome">
+              <input type="text" name="sobrenome" id="sobrenome" class="input-info" placeholder="Sobrenome">
+
+            </div>
+          <div class="dados-pessoais email">
+            <input type="email" name="email" id="email" class="input-info" placeholder="E-mail Pessoal">
+          </div>
+          <div class="dados-pessoais cpf">
+            <input type="text" name="cpf" id="cpf" class="input-info" placeholder="CPF (sem ponto e traço)">
+          </div>
+          <div class="dados-pessoais telefone">
+            <input type="tel" name="telefone" id="telefone" class="input-info" placeholder="Telefone">
+          </div>
+          <div class="dados-pessoais nasc">
+            <label for="nascimento">Data de Nascimento: </label>
+            <input type="date" name="nascimento" id="nascimento" class="input-info" placeholder="data de nascimento">
+          </div>
+        </div>
+        <div class="dados-wrap">
+          <div class="dados-residencia">
+            <div class="dados-pessoais endereco">
+              <input type="text" name="endereco" id="endereco" class="input-info" placeholder="Endereço">
+            </div>
+            <div class="dados-pessoais casa-numero">
+              <input type="number" name="casa-numero" id="casa-numero" class="input-info" placeholder="N°">
+            </div>
+            <div class="dados-pessoais bairro">
+              <input type="text" name="bairro" id="bairro" class="input-info" placeholder="Bairro">
+            </div>
+            <div class="dados-pessoais cep">
+              <input type="text" name="cep" id="cep" class="input-info" placeholder="CEP">
+            </div>
+
+          </div>
+        </div>
+
+        <div class="dados-wrap">
+          <div class="dados-profissionais">
+
+            <div class="id">
+              <input type="id" name="id" id="id" class="input-info" placeholder="ID do funcionario">
+            </div>
+            <div class="dados-profissionais cargo">
+              <input type="text" name="cargo" id="cargo" class="input-info" placeholder="Cargo">
+            </div>
+            <div class="dados-profissionais salario">
+              <input type="number" name="salario" id="salario" class="input-info" placeholder="Salário">
+            </div>
+            <div class="dados-profissionais admissao">
+              <label for="admissao">Data de Admissão: </label>
+              <input type="date" name="data-admissao" id="data-admissao" class="input-info" >
+            </div>
+
+
+          
+          
+        </div>
+
+      </div>
+
+
+    </div>
+    
+    <div class="container-botoes">
+      <div class="div-botao-voltar">
+        <button type="button" class="botao-voltar"><a href="/" class="botao-voltar-link">Voltar</a></button>
+      </div>
+      <div class="div-botao-enviar">
+        <button type="submit" class="botao-enviar">Cadastrar</button>
+      </div>
+    </div>
+  
+</form>
+</div>
+  <!--final do container -->
+
 </body>
+
 </html>

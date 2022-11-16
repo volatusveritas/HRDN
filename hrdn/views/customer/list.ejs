@@ -1,66 +1,122 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo.css">
     <link rel="stylesheet" href="css/list.css">
     <title>Listar clientes</title>
 </head>
-<body>
-  <div class="container">
-    <h2>Customers</h2><br><br>
-    <div class="input-content">
-      <input type="search" id="search">
-    </div>
-    <table class="table">
-      <thead>
-          <tr>
-              <th>ID</th>
-              <th>NAME</th>
-              <th>JOB</th>
-              <th>HIRING</th>
-              <th>ACTIONS</th>
-          </tr>
-      </thead>
-      <tbody>
-          <% customers.forEach(function(customer){ %>
-              <tr>
-                  <td><%= customer.id %></td>
-                  <td><%= customer.name %></td>
-                  <td><%= customer.job %></td>
-                  <td><%= customer.hiring %></td>
-                  <td>
-                      <form action="/customers/edit" method="POST">
-                          <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
-                          <button type="submit">Editar</button>
-                      </form>
 
-                      <form action="/customers/delete" method="POST">
-                          <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
-                          <button type="submit">Deletar</button>
-                      </form>
-                  </td>
-              </tr>
-          <% }) %>
-      </tbody>
-    </table>
-    <!--<div class="register">
-      <div class="up" id="up">
-        <a href="">x</a>
-      </div>
-      <div class="down" id="down">
-        <form action="/customers" method="POST">
-          <input type="text" name="name" placeholder="Qual o nome do cliente"><br><br>
-          <input type="text" name="job" placeholder="Qual o trabalho do cliente"><br><br>
-          <input type="text" name="hiring" placeholder="AAAA-MM-DD"><br><br>
-          <input type="submit" value="Cadastrar cliente">
-        </form>
-      </div>
-    </div>-->
-    <br><br>
-    <a href="/">Voltar</a>
-  </div>
-  <script src="list.js"></script>
+<body>
+    <!--Barra lateral-->
+    <div class="navbar">
+        <input type="checkbox" id="click" class="checkbox" hidden>
+        <div class="barra-lateral">
+            <label for="click">
+                <div class="menu">
+                    <div class="linha linha-1"></div>
+                    <div class="linha linha-2"></div>
+                    <div class="linha linha-3"></div>
+                </div>
+            </label>
+            <div class="ano">2022</div>
+        </div>
+        <nav class="navegacao">
+            <div class="navegacao-cabeca">
+                <h1 class="navegacao-titulo">RHDN</h1>
+                <ul class="navegacao-lista">
+                    <li class="navegacao-item">
+                        <a href="/" class="navegacao-link">Home</a>
+                    </li>
+                    <li class="navegacao-item">
+                        <a href="/customer/add" class="navegacao-link">Cadastro</a>
+                    </li>
+                    <li class="navegacao-item">
+                        <a href="/customer/list" class="navegacao-link">Consulta</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!--final da Barra lateral-->
+    <!--container -->
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Consulta de Funcionario</h1>
+        </div>
+
+        <div class="buscar-funcionario">
+            <form class="formulario-busca">
+                <div class="consulta">
+
+                    <div class="consulta-nome">
+                        <input type="text" name="nome" id="nome" class="input-info-consulta" placeholder="Por Nome">
+
+                    </div>
+                    <div class="conculta-id">
+                        <input type="number" name="id" id="id" class="input-info-consulta" placeholder="Por ID">
+
+                    </div>
+                    <div class="consulta-botao">
+                        <button type="button" id="consulta-botao-btn" class="consulta-btn" onclick="Main()">Buscar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="resultado">
+            <div class="exibir-resultado">
+                <ul class="resultado-busca">
+                    <%
+                     function Main(){
+                         document.querySelector(".resultado-busca").style = block
+                         let nome = document.getElementById("nome").value;
+                         let id = document.getElementById("id").value;
+                        customers.forEach(function(customer){ 
+                           if(customer.id === id || customer.name === nome){
+       
+                           %>
+                           <li class="resultado-busca-item item-1">
+                               <!--
+                                Adicionar os campos referentes as informaçoes do trabalho e pessoais
+                               -->
+                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam hic temporibus modi cum voluptas aliquam non. Unde commodi minima architecto exercitationem error, tenetur libero in possimus fugiat deleniti eligendi accusantium?
+                           </li>
+                           <li class="resultado-busca-item item-2">
+                            <!--
+                                Adicionar os campos referentes ao endereço
+                            -->
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam hic temporibus modi cum voluptas aliquam non. Unde commodi minima architecto exercitationem error, tenetur libero in possimus fugiat deleniti eligendi accusantium?
+                        </li>
+                        <div class="botoes">
+
+                            <form action="/customers/edit" method="POST">
+                                <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
+                                <button type="submit" class="edit-btn">Editar</button>
+                            </form>
+      
+                            <form action="/customers/delete" method="POST">
+                                <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
+                                <button type="submit" class="delete-btn">Deletar</button>
+                            </form>
+                        </div>
+                    
+                           
+                           <% }}) %>
+                     }
+                </ul>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!--final do container -->
+    <script src="list.js"></script>
 </body>
+
 </html>

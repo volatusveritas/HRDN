@@ -31,10 +31,10 @@
             <a href="/" class="navegacao-link">Home</a>
           </li>
           <li class="navegacao-item">
-            <a href="/customer/add.html" class="navegacao-link">Cadastro</a>
+            <a href="/customer/add.ejs" class="navegacao-link">Cadastro</a>
           </li>
           <li class="navegacao-item">
-            <a href="/customer/list.html" class="navegacao-link">Consulta</a>
+            <a href="/views/customer/list.ejs" class="navegacao-link">Consulta</a>
           </li>
         </ul>
       </div>
@@ -52,10 +52,10 @@
           <div class="dados-pessoais nome">
             <input type="text" name="nome" id="nome" class="input-info" placeholder="Nome">
           </div>
-            <div class="dados-pessoais sobrenome">
-              <input type="text" name="sobrenome" id="sobrenome" class="input-info" placeholder="Sobrenome">
+          <div class="dados-pessoais sobrenome">
+            <input type="text" name="sobrenome" id="sobrenome" class="input-info" placeholder="Sobrenome">
 
-            </div>
+          </div>
           <div class="dados-pessoais email">
             <input type="email" name="email" id="email" class="input-info" placeholder="E-mail Pessoal">
           </div>
@@ -91,7 +91,7 @@
         <div class="dados-wrap">
           <div class="dados-profissionais">
 
-            <div class="id">
+            <div class="cadastro-id">
               <input type="id" name="id" id="id" class="input-info" placeholder="ID do funcionario">
             </div>
             <div class="dados-profissionais cargo">
@@ -100,32 +100,38 @@
             <div class="dados-profissionais salario">
               <input type="number" name="salario" id="salario" class="input-info" placeholder="Salário">
             </div>
-            <div class="dados-profissionais admissao">
+            <div class="dados-profissionais email">
+              <input type="email" name="email-profissional" id="email-profissional" class="input-info" placeholder="E-mail @hrdn.com">
+            </div>
+            <div class="dados-profissionais cadastro-admissao">
               <label for="admissao">Data de Admissão: </label>
-              <input type="date" name="data-admissao" id="data-admissao" class="input-info" >
+              <input type="date" name="data-admissao" id="data-admissao" class="input-info">
+            </div>
+
             </div>
 
 
-          
-          
+
+
+
+          </div>
+
+        </div>
+
+        <div class="container-botoes">
+          <div class="div-botao-voltar">
+            <button type="button" class="botao-voltar"><a href="/" class="botao-voltar-link">Voltar</a></button>
+          </div>
+          <div class="div-botao-enviar">
+            <button type="submit" class="botao-enviar">Cadastrar</button>
+          </div>
         </div>
 
       </div>
 
 
-    </div>
-    
-    <div class="container-botoes">
-      <div class="div-botao-voltar">
-        <button type="button" class="botao-voltar"><a href="/" class="botao-voltar-link">Voltar</a></button>
-      </div>
-      <div class="div-botao-enviar">
-        <button type="submit" class="botao-enviar">Cadastrar</button>
-      </div>
-    </div>
-  
-</form>
-</div>
+    </form>
+  </div>
   <!--final do container -->
 
 </body>

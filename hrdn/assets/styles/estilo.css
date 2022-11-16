@@ -216,4 +216,212 @@ body{
     color: #090909;
 
 }
+.contato-email{
+    margin-top: 8rem;
+}
 
+
+/* Add */
+.container{
+    margin-left:  8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+.container-titulo{
+    display: flex;
+}
+
+
+
+
+.dados-wrap{
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+
+.dados{
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.dados label{
+    display: block;
+}
+
+.input-info{
+    margin-bottom: 1rem;
+    text-align: left;
+    border: none;
+    outline: none;
+    border-color: #5e5e5e;
+    transition: all 1.5s;
+    width: 30rem;
+    background: #eee;
+    
+}
+.nasc input{
+    width: 13rem;
+}
+.cadastro-id input{
+    width: 12rem;
+    
+}
+
+.cadastro-admissao input{
+    width: 13rem;
+}
+.input-info:hover{
+    border-bottom: .1rem solid #d5d5d5;
+    
+}
+.container-botoes{
+    display: flex;
+    justify-content: space-between;
+    width: 45rem;
+
+}
+.botao-voltar{
+    background-color: transparent;
+    border: none;
+    font-size: 1.6rem;
+}
+
+.botao-voltar-link{
+    text-decoration: none;
+    color: #090909;
+    transition: all .1s;
+    
+}
+.botao-voltar-link:hover{
+    color: #d5d5d5;
+    font-size: 1.8rem;
+    background-color: red;
+    padding: 1rem;
+    
+}
+
+.botao-enviar{
+    background-color: transparent;
+    border: none;
+    font-size: 1.6rem;
+    transition: all .1s;
+}
+.botao-enviar:hover{
+    font-size: 1.8rem;
+    background-color: green;
+    color: #d5d5d5;
+    padding: 1rem;
+}
+
+
+
+/*final do Add */
+
+/* consulta*/
+
+.input-info-consulta{
+    margin-bottom: 1rem;
+    text-align: left;
+    border: none;
+    outline: none;
+    border-color: #5e5e5e;
+    background: #eee;
+    transition: all 1s;
+}
+.input-info-consulta:hover{
+    border-bottom: .1rem solid #5e5e5e;
+}
+    
+
+.consulta{
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.conculta-id{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+.conculta-id input{
+    width: 10rem;
+}
+.consulta-botao{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    border: none;
+    background-color: transparent;
+    font-size: 1.7rem;
+}
+.consulta-btn{
+    width: 10rem;
+    font-size: 1.6rem;
+    border-radius: 5rem;
+    border: none;
+    transition: all .1s;
+}
+.consulta-btn:hover{
+    font-size: 1.7rem;
+    border-bottom: .1rem solid #5e5e5e;
+    
+    
+   
+}
+/*final do consulta*/
+/*resultado*/
+.resultado {
+    font-size: 1.3rem;
+    margin-right: 5rem;
+
+}
+.resultado form{
+    display: inline;
+
+}
+
+.resultado-busca{
+    display: none;
+}
+
+.resultado-busca-item{
+    list-style: none;
+    background-color: #eee;
+}
+
+.botoes{
+    display: flex;
+    justify-content: end;
+    background-color: #eee;
+    
+
+}
+.botoes button{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 1.6rem;
+    margin: .8rem;
+
+
+}
+.edit-btn:hover{
+    background-color: #fff;
+    font-size: 1.8rem;
+
+
+}
+.delete-btn:hover{
+    background-color: #fff;
+    font-size: 1.8rem;
+
+
+}
+
+
+
+
+/*final do resultado*/

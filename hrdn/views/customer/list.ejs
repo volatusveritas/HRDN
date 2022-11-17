@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/estilo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Listar clientes</title>
 </head>
 
@@ -52,21 +53,13 @@
                 <div class="consulta">
 
                     <div class="consulta-nome">
-                        <input type="text" name="nome" id="nome" class="input-info-consulta" placeholder="Por Nome">
-
-                    </div>
-                    <div class="conculta-id">
-                        <input type="number" name="id" id="id" class="input-info-consulta" placeholder="Por ID">
-
-                    </div>
-                    <div class="consulta-botao">
-                        <button type="button" id="consulta-botao-btn" class="consulta-btn" onclick="Main()">Buscar</button>
+                        <input type="text" name="customer" id="filtro" class="input-info-consulta" placeholder="Pesquisar cliente">
                     </div>
                 </div>
             </form>
         </div>
 
-        <table class="container-table" style="margin-left: 8rem;">
+        <table class="container-table">
           <thead style="color: black;">
             <tr>
               <th>id</th>
@@ -83,7 +76,7 @@
               <th>ACTIONS</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="customers">
             <% customers.forEach(function(customer){ %>
               <tr>
                 <td>
@@ -141,9 +134,17 @@
             let nome = document.getElementById("nome").value;
             let id = document.getElementById("id").value;
           }
+          $(document).ready(function() {
+            $("#filtro").on("keyup", function() {
+              var value = $(this).val().toLowerCase();
+              $("#customers tr").filter(function() {
+                $(this).toggle($(this).text()
+                .toLowerCase().indexOf(value) > -1)
+              });
+            });
+          });
     </script>
     <!--final do container -->
-    <script src="list.js"></script>
 </body>
 
 </html>

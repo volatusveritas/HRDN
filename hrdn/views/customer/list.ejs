@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/estilo.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e3e8c6ea8e.js" crossorigin="anonymous"></script>
     <title>Listar clientes</title>
 </head>
 
@@ -58,75 +59,77 @@
                 </div>
             </form>
         </div>
+        <div class="resultado-consulta">
 
-        <table class="container-table">
-          <thead style="color: black;">
-            <tr>
-              <th>id</th>
-              <td>name</th>
-              <th>mail</th>
-              <th>rhdmail</th>
-              <th>cpf</th>
-              <th>phone</th>
-              <th>date</th>
-              <th>adress</th>
-              <th>wage</th>
-              <th>job</th>
-              <th>hiring</th>
-              <th>ACTIONS</th>
-            </tr>
-          </thead>
-          <tbody id="customers">
-            <% customers.forEach(function(customer){ %>
+          <table class="container-table">
+            <thead >
               <tr>
-                <td>
-                  <span><%= customer.id %></span>
-                </td>
-                <td>
-                  <span><%= customer.name %></span>
-                </td>
-                <td>
-                  <span><%= customer.mail %></span><br><br>
-                </td>
-                <td>
-                  <span><%= customer.rhdmail %></span>
-                </td>
-                <td>
-                  <span><%= customer.cpf %></span>
-                </td>
-                <td>
-                  <span><%= customer.phone %></span>
-                </td>
-                <td>
-                  <span><%= customer.date %></span>
-                </td>
-                <td>
-                  <span><%= customer.adress %></span>
-                </td>
-                <td>
-                  <span><%= customer.wage %></span>
-                </td>
-                <td>
-                  <span><%= customer.job %></span>
-                </td>
-                <td>
-                  <span><%= customer.hiring %></span>
-                </td>
-                <td>
-                  <form action="/customers/edit" method="POST">
-                    <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
-                    <button type="submit" class="edit-btn">Editar</button>
-                </form>
-
-                <form action="/customers/delete" method="POST">
-                    <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
-                    <button type="submit" class="delete-btn">Deletar</button>
-                </form>
-                </td>
+                <th>id</th>
+                <td>name</th>
+                <th>mail</th>
+                <th>rhdmail</th>
+                <th>cpf</th>
+                <th>phone</th>
+                <th>date</th>
+                <th>adress</th>
+                <th>wage</th>
+                <th>job</th>
+                <th>hiring</th>
+                <th>ACTIONS</th>
               </tr>
-              <% }) %>
-          </tbody>
-        </table>
+            </thead>
+            <tbody id="customers">
+              <% customers.forEach(function(customer){ %>
+                <tr>
+                  <td>
+                    <span><%= customer.id %></span>
+                  </td>
+                  <td>
+                    <span><%= customer.name %></span>
+                  </td>
+                  <td>
+                    <span><%= customer.mail %></span>
+                  </td>
+                  <td>
+                    <span><%= customer.rhdmail %></span>
+                  </td>
+                  <td>
+                    <span><%= customer.cpf %></span>
+                  </td>
+                  <td>
+                    <span><%= customer.phone %></span>
+                  </td>
+                  <td>
+                    <span><%= customer.date %></span>
+                  </td>
+                  <td>
+                    <span><%= customer.adress %></span>
+                  </td>
+                  <td>
+                    <span><%= customer.wage %></span>
+                  </td>
+                  <td>
+                    <span><%= customer.job %></span>
+                  </td>
+                  <td>
+                    <span><%= customer.hiring %></span>
+                  </td>
+                  <td>
+                    <form action="/customers/edit" method="POST">
+                      <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
+                      <button type="submit" class="edit-btn"><i class="fa fa-pencil"></i></i></button>
+                  </form>
+  
+                  <form action="/customers/delete" method="POST">
+                      <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
+                      <button type="submit" class="delete-btn"><i class="fa fa-trash"></i></button>
+                  </form>
+                  </td>
+                </tr>
+                <% }) %>
+            </tbody>
+          </table>
+        </div>
     </div>
     <script>
           function Main(){

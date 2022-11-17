@@ -13,6 +13,4 @@ module.exports.routes = {
   '/': { view: 'home' },
   '/home': { view: 'home' },
   '/homepage': { view: 'home' },
-  '/customers/list': { view: 'customer/list'},
-  '/customers/add': { view: 'customer/add'}
 };

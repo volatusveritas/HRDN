@@ -409,17 +409,42 @@ body{
 
 }
 .edit-btn:hover{
-    background-color: #fff;
+   
     font-size: 1.8rem;
+    color: #4056ff;
+    border-bottom: .2rem solid #4056ff;
 
 
 }
 .delete-btn:hover{
-    background-color: #fff;
+   
     font-size: 1.8rem;
+    color: #ff0000;
+    border-bottom: .2rem solid #ff0000;
 
 
 }
+.busca-consulta{
+    
+}
+
+.resultado-consulta table td, th{
+    text-align: left;
+    padding: .7rem;
+    
+    
+}
+.resultado-consulta table thead{
+    color: #090909;
+}
+
+.edit-btn, .delete-btn{
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+
 
 
 

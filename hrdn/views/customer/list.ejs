@@ -32,10 +32,10 @@
                         <a href="/" class="navegacao-link">Home</a>
                     </li>
                     <li class="navegacao-item">
-                        <a href="/customer/add" class="navegacao-link">Cadastro</a>
+                        <a href="customers/add" class="navegacao-link">Cadastro</a>
                     </li>
                     <li class="navegacao-item">
-                        <a href="/customer/list" class="navegacao-link">Consulta</a>
+                        <a href="customers/list" class="navegacao-link">Consulta</a>
                     </li>
                 </ul>
             </div>
@@ -66,55 +66,58 @@
                 </div>
             </form>
         </div>
+        <% customers.forEach(function(customer){ %>
+        <div>
+          <span><%= customer.id %></span><br><br>
+          <span><%= customer.name %></span><br><br>
+          <span><%= customer.mail %></span><br><br>
+          <span><%= customer.rhdmail %></span><br><br>
+          <span><%= customer.cpf %></span><br><br>
+          <span><%= customer.phone %></span><br><br>
+          <span><%= customer.date %></span><br><br>
+          <span><%= customer.adress %></span><br><br>
+          <span><%= customer.wage %></span><br><br>
+          <span><%= customer.job %></span><br><br>
+          <span><%= customer.hiring %></span><br><br>
+        </div>
         <div class="resultado">
             <div class="exibir-resultado">
+
                 <ul class="resultado-busca">
-                    <%
-                     function Main(){
-                         document.querySelector(".resultado-busca").style = block
-                         let nome = document.getElementById("nome").value;
-                         let id = document.getElementById("id").value;
-                        customers.forEach(function(customer){ 
-                           if(customer.id === id || customer.name === nome){
-       
-                           %>
                            <li class="resultado-busca-item item-1">
                                <!--
                                 Adicionar os campos referentes as informaçoes do trabalho e pessoais
                                -->
-                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam hic temporibus modi cum voluptas aliquam non. Unde commodi minima architecto exercitationem error, tenetur libero in possimus fugiat deleniti eligendi accusantium?
+
                            </li>
-                           <li class="resultado-busca-item item-2">
-                            <!--
-                                Adicionar os campos referentes ao endereço
-                            -->
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam hic temporibus modi cum voluptas aliquam non. Unde commodi minima architecto exercitationem error, tenetur libero in possimus fugiat deleniti eligendi accusantium?
-                        </li>
                         <div class="botoes">
 
                             <form action="/customers/edit" method="POST">
                                 <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
                                 <button type="submit" class="edit-btn">Editar</button>
                             </form>
-      
+
                             <form action="/customers/delete" method="POST">
                                 <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
                                 <button type="submit" class="delete-btn">Deletar</button>
                             </form>
                         </div>
-                    
-                           
-                           <% }}) %>
+
+                        <% }) %>
                      }
                 </ul>
-
             </div>
         </div>
 
 
     </div>
-
-
+    <script>
+          function Main(){
+            document.querySelector(".resultado-busca").style = block
+            let nome = document.getElementById("nome").value;
+            let id = document.getElementById("id").value;
+          }
+    </script>
     <!--final do container -->
     <script src="list.js"></script>
 </body>

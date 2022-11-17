@@ -10,7 +10,8 @@
 </head>
 
 <body>
-  <% customers.forEach(function(customer){ %>
+  <%  if(customers != []){
+    customers.forEach(function(customer){ %>
     <!--Barra lateral-->
     <div class="navbar">
         <input type="checkbox" id="click" class="checkbox" hidden>
@@ -126,12 +127,12 @@
             <div class="exibir-resultado">
 
                 <ul class="resultado-busca">
-                           <li class="resultado-busca-item item-1">
-                               <!--
+                            <li class="resultado-busca-item item-1">
+                                <!--
                                 Adicionar os campos referentes as informaçoes do trabalho e pessoais
-                               -->
+                                -->
 
-                           </li>
+                            </li>
                         <div class="botoes">
 
                             <form action="/customers/edit" method="POST">
@@ -159,7 +160,8 @@
     </script>
     <!--final do container -->
     <script src="list.js"></script>
-    <% }) %>
+    <% })
+  %>
 </body>
 
 </html>

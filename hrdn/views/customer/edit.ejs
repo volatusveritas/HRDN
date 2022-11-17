@@ -12,16 +12,27 @@
       <table class="table">
         <thead>
             <tr>
-                <th>NAME</th>
-                <th>JOB</th>
-                <th>HIRING</th>
-                <th>ACTIONS</th>
+              <th>id</th>
+              <td>name</th>
+              <th>mail</th>
+              <th>rhdmail</th>
+              <th>cpf</th>
+              <th>phone</th>
+              <th>date</th>
+              <th>adress</th>
+              <th>wage</th>
+              <th>job</th>
+              <th>hiring</th>
+              <th>ACTIONS</th>
             </tr>
         </thead>
         <tbody>
           <form action="/customers/update" method="POST">
             <input type="hidden" name="id" value="<%= customer.id %>" readonly>
               <tr>
+                <td>
+                  <input type="text" name="name" value="<%= customer.name %>">
+                </td>
                 <td>
                   <input type="text" name="name" value="<%= customer.name %>">
                 </td>

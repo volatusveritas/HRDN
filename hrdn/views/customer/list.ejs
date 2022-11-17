@@ -10,166 +10,156 @@
 </head>
 
 <body>
-    <%
-    if(customers != ''){
-      customers.forEach(function(customer){ %>
-      <!--Barra lateral-->
-      <div class="navbar">
-          <input type="checkbox" id="click" class="checkbox" hidden>
-          <div class="barra-lateral">
-              <label for="click">
-                  <div class="menu">
-                      <div class="linha linha-1"></div>
-                      <div class="linha linha-2"></div>
-                      <div class="linha linha-3"></div>
-                  </div>
-              </label>
-              <div class="ano">2022</div>
-          </div>
-          <nav class="navegacao">
-              <div class="navegacao-cabeca">
-                  <h1 class="navegacao-titulo">RHDN</h1>
-                  <ul class="navegacao-lista">
-                      <li class="navegacao-item">
-                          <a href="/" class="navegacao-link">Home</a>
-                      </li>
-                      <li class="navegacao-item">
-                          <a href="customers/add" class="navegacao-link">Cadastro</a>
-                      </li>
-                      <li class="navegacao-item">
-                          <a href="customers/list" class="navegacao-link">Consulta</a>
-                      </li>
-                  </ul>
-              </div>
-          </nav>
-      </div>
-      <!--final da Barra lateral-->
-      <!--container -->
-      <div class="container">
-          <div class="container-titulo">
-              <h1>Consulta de Funcionario</h1>
-          </div>
+  <% customers.forEach(function(customer){ %>
+    <!--Barra lateral-->
+    <div class="navbar">
+        <input type="checkbox" id="click" class="checkbox" hidden>
+        <div class="barra-lateral">
+            <label for="click">
+                <div class="menu">
+                    <div class="linha linha-1"></div>
+                    <div class="linha linha-2"></div>
+                    <div class="linha linha-3"></div>
+                </div>
+            </label>
+            <div class="ano">2022</div>
+        </div>
+        <nav class="navegacao">
+            <div class="navegacao-cabeca">
+                <h1 class="navegacao-titulo">RHDN</h1>
+                <ul class="navegacao-lista">
+                    <li class="navegacao-item">
+                        <a href="/" class="navegacao-link">Home</a>
+                    </li>
+                    <li class="navegacao-item">
+                        <a href="customers/add" class="navegacao-link">Cadastro</a>
+                    </li>
+                    <li class="navegacao-item">
+                        <a href="customers/list" class="navegacao-link">Consulta</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!--final da Barra lateral-->
+    <!--container -->
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Consulta de Funcionario</h1>
+        </div>
 
-          <div class="buscar-funcionario">
-              <form class="formulario-busca">
-                  <div class="consulta">
+        <div class="buscar-funcionario">
+            <form class="formulario-busca">
+                <div class="consulta">
 
-                      <div class="consulta-nome">
-                          <input type="text" name="nome" id="nome" class="input-info-consulta" placeholder="Por Nome">
+                    <div class="consulta-nome">
+                        <input type="text" name="nome" id="nome" class="input-info-consulta" placeholder="Por Nome">
 
-                      </div>
-                      <div class="conculta-id">
-                          <input type="number" name="id" id="id" class="input-info-consulta" placeholder="Por ID">
+                    </div>
+                    <div class="conculta-id">
+                        <input type="number" name="id" id="id" class="input-info-consulta" placeholder="Por ID">
 
-                      </div>
-                      <div class="consulta-botao">
-                          <button type="button" id="consulta-botao-btn" class="consulta-btn" onclick="Main()">Buscar</button>
-                      </div>
-                  </div>
-              </form>
-          </div>
+                    </div>
+                    <div class="consulta-botao">
+                        <button type="button" id="consulta-botao-btn" class="consulta-btn" onclick="Main()">Buscar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
 
-          <table class="container-table" style="margin-left: 8rem;">
-            <thead style="color: #f7f7f7;">
+        <table class="container-table" style="margin-left: 8rem;">
+          <thead style="color: #f7f7f7;">
+            <tr>
+              <th>id</th>
+              <td>name</th>
+              <th>mail</th>
+              <th>rhdmail</th>
+              <th>cpf</th>
+              <th>phone</th>
+              <th>date</th>
+              <th>adress</th>
+              <th>wage</th>
+              <th>job</th>
+              <th>hiring</th>
+              <th>ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <form action="/customers" method="POST">
               <tr>
-                <th>id</th>
-                <td>name</th>
-                <th>mail</th>
-                <th>rhdmail</th>
-                <th>cpf</th>
-                <th>phone</th>
-                <th>date</th>
-                <th>adress</th>
-                <th>wage</th>
-                <th>job</th>
-                <th>hiring</th>
-                <th>ACTIONS</th>
+                <td>
+                  <span><%= customer.id %></span>
+                </td>
+                <td>
+                  <span><%= customer.name %></span>
+                </td>
+                <td>
+                  <span><%= customer.mail %></span><br><br>
+                </td>
+                <td>
+                  <span><%= customer.rhdmail %></span>
+                </td>
+                <td>
+                  <span><%= customer.cpf %></span>
+                </td>
+                <td>
+                  <span><%= customer.phone %></span>
+                </td>
+                <td>
+                  <span><%= customer.date %></span>
+                </td>
+                <td>
+                  <span><%= customer.adress %></span>
+                </td>
+                <td>
+                  <span><%= customer.wage %></span>
+                </td>
+                <td>
+                  <span><%= customer.job %></span>
+                </td>
+                <td><span><%= customer.hiring %></span></td>
               </tr>
-            </thead>
-            <tbody>
-              <form action="/customers" method="POST">
-                <tr>
-                  <td>
-                    <span><%= customer.id %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.name %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.mail %></span><br><br>
-                  </td>
-                  <td>
-                    <span><%= customer.rhdmail %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.cpf %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.phone %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.date %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.adress %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.wage %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.job %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.hiring %></span>
-                  </td>
-                </tr>
-              </form>
-            </tbody>
-          </table>
-          <div class="resultado">
-              <div class="exibir-resultado">
+            </form>
+          </tbody>
+        </table>
+        <div class="resultado">
+            <div class="exibir-resultado">
 
-                  <ul class="resultado-busca">
-                            <li class="resultado-busca-item item-1">
-                                <!--
-                                  Adicionar os campos referentes as informaçoes do trabalho e pessoais
-                                -->
+                <ul class="resultado-busca">
+                           <li class="resultado-busca-item item-1">
+                               <!--
+                                Adicionar os campos referentes as informaçoes do trabalho e pessoais
+                               -->
 
-                            </li>
-                          <div class="botoes">
+                           </li>
+                        <div class="botoes">
 
-                              <form action="/customers/edit" method="POST">
-                                  <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
-                                  <button type="submit" class="edit-btn">Editar</button>
-                              </form>
+                            <form action="/customers/edit" method="POST">
+                                <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
+                                <button type="submit" class="edit-btn">Editar</button>
+                            </form>
 
-                              <form action="/customers/delete" method="POST">
-                                  <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
-                                  <button type="submit" class="delete-btn">Deletar</button>
-                              </form>
-                          </div>
-                  </ul>
-              </div>
-          </div>
+                            <form action="/customers/delete" method="POST">
+                                <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
+                                <button type="submit" class="delete-btn">Deletar</button>
+                            </form>
+                        </div>
+                </ul>
+            </div>
+        </div>
 
 
-      </div>
-      <script>
-            function Main(){
-              document.querySelector(".resultado-busca").style = block
-              let nome = document.getElementById("nome").value;
-              let id = document.getElementById("id").value;
-            }
-      </script>
-      <!--final do container -->
-      <script src="list.js"></script>
-      <% })
-    }else{
-      <div>
-        <p>Sem clientes</p>
-      </div>
-    }
-    %>
+    </div>
+    <script>
+          function Main(){
+            document.querySelector(".resultado-busca").style = block
+            let nome = document.getElementById("nome").value;
+            let id = document.getElementById("id").value;
+          }
+    </script>
+    <!--final do container -->
+    <script src="list.js"></script>
+    <% }) %>
 </body>
 
 </html>

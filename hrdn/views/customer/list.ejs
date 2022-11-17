@@ -10,8 +10,6 @@
 </head>
 
 <body>
-  <%  if(customers != []){
-    customers.forEach(function(customer){ %>
     <!--Barra lateral-->
     <div class="navbar">
         <input type="checkbox" id="click" class="checkbox" hidden>
@@ -86,7 +84,7 @@
             </tr>
           </thead>
           <tbody>
-            <form action="/customers" method="POST">
+            <% customers.forEach(function(customer){ %>
               <tr>
                 <td>
                   <span><%= customer.id %></span>
@@ -118,38 +116,24 @@
                 <td>
                   <span><%= customer.job %></span>
                 </td>
-                <td><span><%= customer.hiring %></span></td>
+                <td>
+                  <span><%= customer.hiring %></span>
+                </td>
+                <td>
+                  <form action="/customers/edit" method="POST">
+                    <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
+                    <button type="submit" class="edit-btn">Editar</button>
+                </form>
+
+                <form action="/customers/delete" method="POST">
+                    <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
+                    <button type="submit" class="delete-btn">Deletar</button>
+                </form>
+                </td>
               </tr>
-            </form>
+              <% }) %>
           </tbody>
         </table>
-        <div class="resultado">
-            <div class="exibir-resultado">
-
-                <ul class="resultado-busca">
-                            <li class="resultado-busca-item item-1">
-                                <!--
-                                Adicionar os campos referentes as informaçoes do trabalho e pessoais
-                                -->
-
-                            </li>
-                        <div class="botoes">
-
-                            <form action="/customers/edit" method="POST">
-                                <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
-                                <button type="submit" class="edit-btn">Editar</button>
-                            </form>
-
-                            <form action="/customers/delete" method="POST">
-                                <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
-                                <button type="submit" class="delete-btn">Deletar</button>
-                            </form>
-                        </div>
-                </ul>
-            </div>
-        </div>
-
-
     </div>
     <script>
           function Main(){
@@ -160,8 +144,6 @@
     </script>
     <!--final do container -->
     <script src="list.js"></script>
-    <% })
-  %>
 </body>
 
 </html>

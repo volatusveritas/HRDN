@@ -60,75 +60,102 @@
             </form>
         </div>
         <div class="resultado-consulta">
+          <% if (customers != ''){ %>
+            <% customers.forEach(function(customer){ %>
+              <table class="container-table">
+                <thead>
+                  <tr>
+                    <th>id</th>
+                    <td>name</th>
+                    <th>mail</th>
+                    <th>rhdmail</th>
+                    <th>cpf</th>
+                    <th>phone</th>
+                    <th>date</th>
+                    <th>adress</th>
+                    <th>wage</th>
+                    <th>job</th>
+                    <th>hiring</th>
+                    <th>ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody id="customers">
+                    <tr>
+                      <td>
+                        <span><%= customer.id %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.name %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.mail %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.rhdmail %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.cpf %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.phone %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.date %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.adress %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.wage %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.job %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.hiring %></span>
+                      </td>
+                      <td>
+                        <form action="/customers/edit" method="POST">
+                          <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
+                          <button type="submit" class="edit-btn"><i class="fa fa-pencil"></i></i></button>
+                      </form>
 
-          <table class="container-table">
-            <thead >
-              <tr>
-                <th>id</th>
-                <td>name</th>
-                <th>mail</th>
-                <th>rhdmail</th>
-                <th>cpf</th>
-                <th>phone</th>
-                <th>date</th>
-                <th>adress</th>
-                <th>wage</th>
-                <th>job</th>
-                <th>hiring</th>
-                <th>ACTIONS</th>
-              </tr>
-            </thead>
-            <tbody id="customers">
-              <% customers.forEach(function(customer){ %>
+                      <form action="/customers/delete" method="POST">
+                          <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
+                          <button type="submit" class="delete-btn"><i class="fa fa-trash"></i></button>
+                      </form>
+                      </td>
+                    </tr>
+                </tbody>
+              </table>
+            <% }); %>
+          <% } else { %>
+            <table class="container-table">
+              <thead>
                 <tr>
-                  <td>
-                    <span><%= customer.id %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.name %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.mail %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.rhdmail %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.cpf %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.phone %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.date %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.adress %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.wage %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.job %></span>
-                  </td>
-                  <td>
-                    <span><%= customer.hiring %></span>
-                  </td>
-                  <td>
-                    <form action="/customers/edit" method="POST">
-                      <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
-                      <button type="submit" class="edit-btn"><i class="fa fa-pencil"></i></i></button>
-                  </form>
-  
-                  <form action="/customers/delete" method="POST">
-                      <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
-                      <button type="submit" class="delete-btn"><i class="fa fa-trash"></i></button>
-                  </form>
-                  </td>
+                  <th>id</th>
+                  <td>name</th>
+                  <th>mail</th>
+                  <th>rhdmail</th>
+                  <th>cpf</th>
+                  <th>phone</th>
+                  <th>date</th>
+                  <th>adress</th>
+                  <th>wage</th>
+                  <th>job</th>
+                  <th>hiring</th>
+                  <th>ACTIONS</th>
                 </tr>
-                <% }) %>
-            </tbody>
-          </table>
+              </thead>
+              <tbody id="customers">
+                  <tr>
+                    <td colspan="12">
+                      <h5 style="margin-left: 37%;margin-right:37%;">Nenhum cliente cadastrado</h5>
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          <% } %>
         </div>
     </div>
     <script>

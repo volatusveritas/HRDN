@@ -227,7 +227,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 
 }
 .container-titulo{
@@ -261,14 +261,14 @@ body{
     transition: all 1.5s;
     width: 30rem;
     background: #eee;
-    
+
 }
 .nasc input{
     width: 13rem;
 }
 .cadastro-id input{
     width: 12rem;
-    
+
 }
 
 .cadastro-admissao input{
@@ -276,7 +276,7 @@ body{
 }
 .input-info:hover{
     border-bottom: .1rem solid #d5d5d5;
-    
+
 }
 .container-botoes{
     display: flex;
@@ -294,14 +294,14 @@ body{
     text-decoration: none;
     color: #090909;
     transition: all .1s;
-    
+
 }
 .botao-voltar-link:hover{
     color: #d5d5d5;
     font-size: 1.8rem;
     background-color: red;
     padding: 1rem;
-    
+
 }
 
 .botao-enviar{
@@ -335,7 +335,7 @@ body{
 .input-info-consulta:hover{
     border-bottom: .1rem solid #5e5e5e;
 }
-    
+
 
 .consulta{
     margin: 1rem;
@@ -367,9 +367,9 @@ body{
 .consulta-btn:hover{
     font-size: 1.7rem;
     border-bottom: .1rem solid #5e5e5e;
-    
-    
-   
+
+
+
 }
 /*final do consulta*/
 /*resultado*/
@@ -396,7 +396,7 @@ body{
     display: flex;
     justify-content: end;
     background-color: #eee;
-    
+
 
 }
 .botoes button{
@@ -409,30 +409,26 @@ body{
 
 }
 .edit-btn:hover{
-   
-    font-size: 1.8rem;
     color: #4056ff;
-    border-bottom: .2rem solid #4056ff;
+    cursor: pointer;
 
 
 }
 .delete-btn:hover{
-   
-    font-size: 1.8rem;
     color: #ff0000;
-    border-bottom: .2rem solid #ff0000;
+    cursor: pointer;
 
 
 }
 .busca-consulta{
-    
+
 }
 
 .resultado-consulta table td, th{
     text-align: left;
     padding: .7rem;
-    
-    
+
+
 }
 .resultado-consulta table thead{
     color: #090909;

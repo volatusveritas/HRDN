@@ -61,7 +61,6 @@
         </div>
         <div class="resultado-consulta">
           <% if (customers != ''){ %>
-            <% customers.forEach(function(customer){ %>
               <table class="container-table">
                 <thead>
                   <tr>
@@ -80,6 +79,7 @@
                   </tr>
                 </thead>
                 <tbody id="customers">
+                  <% customers.forEach(function(customer){ %>
                     <tr>
                       <td>
                         <span><%= customer.id %></span>

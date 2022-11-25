@@ -69,7 +69,13 @@ module.exports = {
 
         data = new Date(req.body.hiring);
 
-        await Customers.update({id:req.body.id}).set({name: req.body.name, job: req.body.job, hiring: data}).exec(function(err){
+        await Customers.update({id:req.body.id}).set({
+          name: req.body.name, mail: req.body.mail,
+          rhdmail: req.body.rhdmail, cpf: req.body.cpf,
+          phone: req.body.phone, date: req.body.date,
+          adress: req.body.adress, wage: req.body.wage,
+          job: req.body.job, hiring: req.body.hiring
+        }).exec(function(err){
             if(err){
                 res.send(500, {error: 'Nada dale'});
             }

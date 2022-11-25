@@ -1,0 +1,1 @@
+curl -d '{"name": "Pedro Agiota", "mail": "gutsantos3@gmail.com", "rhdmail": "pedro.agiota@job.com", "cpf": "123.456.789-10", "phone": "(11) 94575-0749", "date": "30/05/2000", "adress": "Rua Tutoia", "wage": "R$: 2000", "job": "Programador", "hiring": "12/03/2022"}' -H "Content-Type: application/json" -X POST http://localhost:1337/customer/?

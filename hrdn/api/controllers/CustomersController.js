@@ -29,7 +29,13 @@ module.exports = {
 
     create: async function(req, res) {
 
-        await Customers.create({name: req.body.name, job: req.body.job, hiring: req.body.hiring}).exec(function(err){
+        await Customers.create({
+          name: req.body.name, mail: req.body.mail,
+          rhdmail: req.body.rhdmail, cpf: req.body.cpf,
+          phone: req.body.phone, date: req.body.date,
+          adress: req.body.adress, wage: req.body.wage,
+          job: req.body.job, hiring: req.body.hiring
+        }).exec(function(err){
             if(err){
                 res.send(500, {error: 'Nada dale'});
             }

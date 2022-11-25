@@ -11,8 +11,16 @@ module.exports = {
   attributes: {
 
     name: {type: 'string', required: true},
+    mail: {type: 'string', required: true},
+    rhdmail: {type: 'string', required: true},
+    cpf: {type: 'string', required: true},
+    phone: {type: 'string', required: true},
+    date: {type: 'string', required: true},
+    adress: {type: 'string', required: true},
+    wage: {type: 'string', required: true},
     job: {type: 'string', required: true},
-    hiring: {type: 'ref', columnType: 'datetime', required: true}
+    hiring: {type: 'string', required: true}
+
 
   },
 

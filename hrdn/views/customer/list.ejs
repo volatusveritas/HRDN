@@ -1,66 +1,180 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="/styles/estilo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e3e8c6ea8e.js" crossorigin="anonymous"></script>
     <title>Listar clientes</title>
 </head>
+
 <body>
-  <div class="container">
-    <h2>Customers</h2><br><br>
-    <div class="input-content">
-      <input type="search" id="search">
+    <!--Barra lateral-->
+    <div class="navbar">
+        <input type="checkbox" id="click" class="checkbox" hidden>
+        <div class="barra-lateral">
+            <label for="click">
+                <div class="menu">
+                    <div class="linha linha-1"></div>
+                    <div class="linha linha-2"></div>
+                    <div class="linha linha-3"></div>
+                </div>
+            </label>
+            <div class="ano">2022</div>
+        </div>
+        <nav class="navegacao">
+            <div class="navegacao-cabeca">
+                <h1 class="navegacao-titulo">HRDN</h1>
+                <ul class="navegacao-lista">
+                    <li class="navegacao-item">
+                        <a href="/" class="navegacao-link">Home</a>
+                    </li>
+                    <li class="navegacao-item">
+                        <a href="/customers/add" class="navegacao-link">Cadastro</a>
+                    </li>
+                    <li class="navegacao-item">
+                        <a href="/customers/list" class="navegacao-link">Consulta</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
-    <table class="table">
-      <thead>
-          <tr>
-              <th>ID</th>
-              <th>NAME</th>
-              <th>JOB</th>
-              <th>HIRING</th>
-              <th>ACTIONS</th>
-          </tr>
-      </thead>
-      <tbody>
-          <% customers.forEach(function(customer){ %>
-              <tr>
-                  <td><%= customer.id %></td>
-                  <td><%= customer.name %></td>
-                  <td><%= customer.job %></td>
-                  <td><%= customer.hiring %></td>
-                  <td>
-                      <form action="/customers/edit" method="POST">
+    <!--final da Barra lateral-->
+    <!--container -->
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Consulta de Funcionario</h1>
+        </div>
+
+        <div class="buscar-funcionario">
+            <form class="formulario-busca">
+                <div class="consulta">
+
+                    <div class="consulta-nome">
+                        <input type="text" name="customer" id="filtro" class="input-info-consulta" placeholder="Pesquisar cliente">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="resultado-consulta">
+          <% if (customers != ''){ %>
+            <table class="container-table">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <td>name</th>
+                    <th>mail</th>
+                    <th>rhdmail</th>
+                    <th>cpf</th>
+                    <th>phone</th>
+                    <th>date</th>
+                    <th>adress</th>
+                    <th>wage</th>
+                    <th>job</th>
+                    <th>hiring</th>
+                    <th>ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody id="customers">
+                  <% customers.forEach(function(customer){ %>
+                  <tr>
+                      <td>
+                        <span><%= customer.id %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.name %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.mail %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.rhdmail %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.cpf %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.phone %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.date %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.adress %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.wage %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.job %></span>
+                      </td>
+                      <td>
+                        <span><%= customer.hiring %></span>
+                      </td>
+                      <td>
+                        <form action="/customers/edit" method="POST">
                           <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
-                          <button type="submit">Editar</button>
+                          <button type="submit" class="edit-btn"><i class="fa fa-pencil"></i></i></button>
                       </form>
 
                       <form action="/customers/delete" method="POST">
                           <input type="hidden" value="<%= customer.id %>" name="id" readonly></input>
-                          <button type="submit">Deletar</button>
+                          <button type="submit" class="delete-btn"><i class="fa fa-trash"></i></button>
                       </form>
-                  </td>
-              </tr>
-          <% }) %>
-      </tbody>
-    </table>
-    <!--<div class="register">
-      <div class="up" id="up">
-        <a href="">x</a>
-      </div>
-      <div class="down" id="down">
-        <form action="/customers" method="POST">
-          <input type="text" name="name" placeholder="Qual o nome do cliente"><br><br>
-          <input type="text" name="job" placeholder="Qual o trabalho do cliente"><br><br>
-          <input type="text" name="hiring" placeholder="AAAA-MM-DD"><br><br>
-          <input type="submit" value="Cadastrar cliente">
-        </form>
-      </div>
-    </div>-->
-    <br><br>
-    <a href="/">Voltar</a>
-  </div>
-  <script src="list.js"></script>
+                      </td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+              </table>
+          <% } else { %>
+            <table class="container-table">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <td>name</th>
+                  <th>mail</th>
+                  <th>hrdmail</th>
+                  <th>cpf</th>
+                  <th>phone</th>
+                  <th>date</th>
+                  <th>adress</th>
+                  <th>wage</th>
+                  <th>job</th>
+                  <th>hiring</th>
+                  <th>ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody id="customers">
+                  <tr>
+                    <td colspan="12">
+                      <h5 style="margin-left: 37%;margin-right:37%;">Nenhum cliente cadastrado</h5>
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          <% } %>
+        </div>
+    </div>
+    <script>
+          function Main(){
+            document.querySelector(".resultado-busca").style = block
+            let nome = document.getElementById("nome").value;
+            let id = document.getElementById("id").value;
+          }
+          $(document).ready(function() {
+            $("#filtro").on("keyup", function() {
+              var value = $(this).val().toLowerCase();
+              $("#customers tr").filter(function() {
+                $(this).toggle($(this).text()
+                .toLowerCase().indexOf(value) > -1)
+              });
+            });
+          });
+    </script>
+    <!--final do container -->
 </body>
+
 </html>

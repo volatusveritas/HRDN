@@ -1,45 +1,129 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/list.css">
-    <title>Editar cliente</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/estilo.css">
+  <title>RHDR</title>
 </head>
+
 <body>
-    <div class="container">
-      <table class="table">
-        <thead>
-            <tr>
-                <th>NAME</th>
-                <th>JOB</th>
-                <th>HIRING</th>
-                <th>ACTIONS</th>
-            </tr>
-        </thead>
-        <tbody>
-          <form action="/customers/update" method="POST">
-            <input type="hidden" name="id" value="<%= customer.id %>" readonly>
-              <tr>
-                <td>
-                  <input type="text" name="name" value="<%= customer.name %>">
-                </td>
-                <td>
-                  <input type="text" name="job" value="<%= customer.job %>">
-                </td>
-                <td>
-                  <input type="text" name="hiring" value="<%= customer.hiring %>">
-                </td>
-                <td>
-                  <input type="submit" value="Editar Cliente">
-                </td>
-              </tr>
-            </form>
-        </tbody>
-      </table>
-      <br><br>
-      <a href="/">Voltar</a>
+  <!--Barra lateral-->
+  <div class="navbar">
+    <input type="checkbox" id="click" class="checkbox" hidden>
+    <div class="barra-lateral">
+      <label for="click">
+        <div class="menu">
+          <div class="linha linha-1"></div>
+          <div class="linha linha-2"></div>
+          <div class="linha linha-3"></div>
+        </div>
+      </label>
+      <div class="ano">2022</div>
     </div>
+    <nav class="navegacao">
+      <div class="navegacao-cabeca">
+        <h1 class="navegacao-titulo">RHDN</h1>
+        <ul class="navegacao-lista">
+          <li class="navegacao-item">
+            <a href="/" class="navegacao-link">Home</a>
+          </li>
+          <li class="navegacao-item">
+            <a href="/customers/add" class="navegacao-link">Cadastro</a>
+          </li>
+          <li class="navegacao-item">
+            <a href="/customers/list" class="navegacao-link">Consulta</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!--final da Barra lateral-->
+  <!--container -->
+  <div class="container">
+    <div class="container-titulo">
+      <h1>Atualização de Funcionario</h1>
+    </div>
+    <form action="/customers/update" method="POST"class="formulario-cadastro">
+      <div class="dados">
+        <div class="dados-wrap">
+          <div class="dados-pessoais nome">
+            <input type="hidden" name="id" id="id" class="input-info" placeholder="Nome completo" value="<%= customer.id %>" readonly>
+          </div>
+          <div class="dados-pessoais nome">
+            <input type="text" name="name" id="nome" class="input-info" placeholder="Nome completo" value="<%= customer.name %>">
+          </div>
+          <div class="dados-pessoais email">
+            <input type="text" name="mail" id="email" class="input-info" placeholder="E-mail Pessoal" value="<%= customer.mail %>" >
+          </div>
+          <div class="dados-pessoais cpf">
+            <input type="text" name="cpf" id="cpf" class="input-info" placeholder="CPF (sem ponto e traço)" value="<%= customer.cpf %>">
+          </div>
+          <div class="dados-pessoais telefone">
+            <input type="text" name="phone" id="telefone" class="input-info" placeholder="Telefone" value="<%= customer.phone %>">
+          </div>
+          <div class="dados-pessoais nasc">
+            <label for="nascimento">Data de Nascimento: </label>
+            <input type="text" name="date" id="nascimento" class="input-info" placeholder="data de nascimento" value="<%= customer.date %>">
+          </div>
+        </div>
+        <div class="dados-wrap">
+          <div class="dados-residencia">
+            <div class="dados-pessoais endereco">
+              <input type="text" name="adress" id="endereco" class="input-info" placeholder="Endereço" value="<%= customer.adress %>">
+            </div>
+            <!--<div class="dados-pessoais casa-numero">
+              <input type="text" name="adress" id="casa-numero" class="input-info" placeholder="N°">
+            </div>
+            <div class="dados-pessoais bairro">
+              <input type="text" name="adress" id="bairro" class="input-info" placeholder="Bairro">
+            </div>
+            <div class="dados-pessoais cep">
+              <input type="text" name="adress" id="cep" class="input-info" placeholder="CEP">
+            </div>-->
+
+          </div>
+        </div>
+
+        <div class="dados-wrap">
+          <div class="dados-profissionais">
+            <div class="dados-profissionais cargo">
+              <input type="text" name="job" id="cargo" class="input-info" placeholder="Cargo" value="<%= customer.job %>">
+            </div>
+            <div class="dados-profissionais salario">
+              <input type="text" name="wage" id="salario" class="input-info" placeholder="Salário" value="<%= customer.wage %>">
+            </div>
+            <div class="dados-profissionais email">
+              <input type="text" name="hrdmail" id="email-profissional" class="input-info" placeholder="E-mail @hrdn.com" value="<%= customer.rhdmail %>">
+            </div>
+            <div class="dados-profissionais cadastro-admissao">
+              <label for="admissao">Data de Admissão: </label>
+              <input type="text" name="hiring" id="data-admissao" class="input-info" value="<%= customer.hiring %>">
+            </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="container-botoes">
+          <div class="div-botao-voltar">
+            <button type="button" class="botao-voltar"><a href="/" class="botao-voltar-link">Inicio</a></button>
+          </div>
+          <div class="div-botao-enviar">
+            <button type="submit" class="botao-enviar">Atualizar</button>
+          </div>
+        </div>
+
+      </div>
+
+
+    </form>
+  </div>
+  <!--final do container -->
+
 </body>
+
 </html>

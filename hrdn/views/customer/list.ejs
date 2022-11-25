@@ -61,12 +61,11 @@
         </div>
         <div class="resultado-consulta">
           <% if (customers != ''){ %>
-            <% customers.forEach(function(customer){ %>
-              <table class="container-table">
-                <thead>
-                  <tr>
-                    <th>id</th>
-                    <td>name</th>
+            <table class="container-table">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <td>name</th>
                     <th>mail</th>
                     <th>rhdmail</th>
                     <th>cpf</th>
@@ -80,7 +79,8 @@
                   </tr>
                 </thead>
                 <tbody id="customers">
-                    <tr>
+                  <% customers.forEach(function(customer){ %>
+                  <tr>
                       <td>
                         <span><%= customer.id %></span>
                       </td>
@@ -126,9 +126,9 @@
                       </form>
                       </td>
                     </tr>
+                    <% }); %>
                 </tbody>
               </table>
-            <% }); %>
           <% } else { %>
             <table class="container-table">
               <thead>
